@@ -1,0 +1,105 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What's For Dinner</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold brand" href="#">
+        <i class="fa-solid fa-utensils me-2"></i>What's For Dinner
+        <span class="d-block fw-normal text-muted tagline">Your daily meal inspiration</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="menu">
+        <ul class="navbar-nav align-items-lg-center gap-lg-2">
+          <li class="nav-item"><a class="nav-link" href="#"><i class="fa-regular fa-bookmark me-1"></i></a></li>
+          <li class="nav-item"><a class="nav-link" href="#"><i class="fa-solid fa-clock-rotate-left me-1"></i></a></li>
+          <li class="nav-item"><a class="nav-link" href="#"><i class="fa-solid fa-gear me-1"></i></a></li>
+          <li class="nav-item"><a class="nav-link" href="#"><img src="img/avatar-4.jpg" alt="" class="nav-avatar"></a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <main class="container my-4 ">
+    <div class="card recipe-card border-0 shadow overflow-hidden" id="recipe-card">
+      <div class="row g-0">
+
+    
+        <div class="col-lg-5 position-relative cover-box" >
+          <img id="cover" class="cover" alt="Recipe photo">
+          <span class="badge rounded-pill bg-white text-dark position-absolute top-0 start-0 m-3 p-2 shadow-sm">
+            <i class="fa-solid fa-star text-warning"></i>
+            <span id="rating"></span>
+          </span>
+          <div class="stats bg-white rounded-4 shadow p-3 row text-center g-0">
+            <div class="col"><i class="fa-solid fa-clock text-warning fs-5"></i><span class="d-block text-muted">Prep Time</span><strong id="prep"></strong></div>
+            <div class="col"><i class="fa-solid fa-fire-burner text-danger fs-5"></i><span class="d-block text-muted">Cook Time</span><strong id="cook"></strong></div>
+            <div class="col"><i class="fa-solid fa-users text-primary fs-5"></i><span class="d-block text-muted">Servings</span><strong id="servings"></strong></div>
+          </div>
+        </div>
+
+       
+        <div class="col-lg-7 p-4 d-flex flex-column">
+          <div class="mb-2">
+            <span class="badge bg-success-subtle text-success-emphasis rounded-pill" id="difficulty"></span>
+            <span class="badge bg-primary-subtle text-primary-emphasis rounded-pill" id="category"></span>
+          </div>
+
+          <div class="d-flex justify-content-between align-items-center">
+            <h2 class="fw-bold mb-0" id="title"></h2>
+            <div class="d-flex gap-2">
+              <button class="btn btn-warning-subtle icon-btn" id="save-btn"><i class="fa-solid fa-bookmark"></i></button>
+              <button class="btn btn-warning-subtle icon-btn" id="share-btn"><i class="fa-solid fa-share-nodes"></i></button>
+            </div>
+          </div>
+          <p class="text-muted mt-1" id="description"></p>
+
+          <div class="alert alert-danger  p-2 d-flex flex-wrap align-items-center me-1 d-none" id="warning">
+            <i class="fa-solid fa-triangle-exclamation me-2 "></i>
+            <div class="d-flex flex-column">
+         <strong class="">Extended Preparation Time</strong>
+            <span class="">This recipe requires more than 45 minutes. Plan accordingly!</span> 
+            </div>
+
+          </div>
+
+        
+          <ul class="nav nav-tabs mb-3" role="tablist">
+            <li class="nav-item"><button class="nav-link active" id="tab-ingredients" data-bs-toggle="tab" data-bs-target="#pane-ingredients"><i class="fa-solid fa-list-check me-1"></i>Ingredients</button></li>
+            <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#pane-instructions"><i class="fa-solid fa-book-open me-1"></i>Instructions</button></li>
+            <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#pane-nutrition"><i class="fa-solid fa-chart-pie me-1"></i>Nutrition</button></li>
+            <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#pane-tips"><i class="fa-solid fa-lightbulb me-1"></i>Chef's Tips</button></li>
+          </ul>
+          <div class="tab-content flex-grow-1">
+            <div class="tab-pane fade show active" id="pane-ingredients"></div>
+            <div class="tab-pane fade" id="pane-instructions"></div>
+            <div class="tab-pane fade" id="pane-nutrition"></div>
+            <div class="tab-pane fade" id="pane-tips"></div>
+          </div>
+
+          <hr>
+          <button class="btn try-btn align-self-start" onclick="pickRecipe()">
+            <i class="fa-solid fa-rotate me-2"></i>Try Another Recipe
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
